@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stutter Detection App</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<h2 class="title">🎤 Stutter Detection App</h2>
+
+<div class="row-container">
+
+    <!-- LEFT: TEXT MODE -->
+    <div class="section-box">
+        <h3>TEXT MODE</h3>
+
+        <textarea id="textInput" placeholder="Type a sentence..."></textarea>
+
+        <button onclick="analyzeText()">Analyze Text</button>
+        <button class="clear-btn" onclick="clearText()">Clear</button>
+
+        <div id="textResult" class="result-box" style="display:none;"></div>
+    </div>
+
+
+    <!-- RIGHT: AUDIO MODE -->
+    <div class="section-box">
+        <h3>AUDIO MODE</h3>
+
+        <label class="file-box">
+            <input type="file" id="audioFile" accept=".wav,.mp3" onchange="showFileName(); clearAudio();">
+            <span id="fileName">Choose Audio File...</span>
+        </label>
+
+        <button onclick="uploadAudio()">Upload Audio</button>
+        <button class="clear-btn" onclick="clearAudio()">Clear</button>
+
+        <div id="audioResult" class="result-box" style="display:none;"></div>
+
+        <div id="confidenceBar" class="progress-container" style="display:none;">
+            <div id="confidenceFill" class="progress-fill"></div>
+        </div>
+    </div>
+
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>
